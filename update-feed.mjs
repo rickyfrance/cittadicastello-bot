@@ -3,7 +3,7 @@
 
 import { writeFile } from 'node:fs/promises';
 
-const BASE = 'https://www.comune.cittadicastello.pg.it';
+const BASE = 'https://r.jina.ai/https://www.comune.cittadicastello.pg.it';
 const FEED = process.env.FEED_URL ?? `${BASE}/news.json.php?page=1&limit=20&notizieScadute=1`;
 const OUT = new URL('./news.json', import.meta.url);
 const UA = 'cittadicastello-news-bot/1.0 (una lettura al giorno, solo notizie pubbliche)';
