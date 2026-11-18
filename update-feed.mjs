@@ -1,11 +1,8 @@
 // Legge le novità dal sito del Comune di Città di Castello e le salva in news.json.
-// Il bot Devvit legge poi news.json da GitHub (raw.githubusercontent.com).
-
 import { writeFile } from 'node:fs/promises';
 
 const BASE = 'https://www.comune.cittadicastello.pg.it';
-const TARGET = `${BASE}/news.json.php?page=1&limit=20&notizieScadute=1`;
-const FEED = process.env.FEED_URL ?? `https://api.allorigins.win/raw?url=${encodeURIComponent(TARGET)}`;
+const FEED = process.env.FEED_URL ?? `${BASE}/news.json.php?page=1&limit=20&notizieScadute=1`;
 const OUT = new URL('./news.json', import.meta.url);
 const UA = 'cittadicastello-news-bot/1.0 (una lettura al giorno, solo notizie pubbliche)';
 
